@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    direction: rtl;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+header .logo span {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+}
+
+header .login-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+main {
+    padding: 20px;
+}
+
+main h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.trainings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.training {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.training img {
+    width: 100%;
+    height: auto;
+}
+
+.training p {
+    padding: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+@keyframes hovers {
+    from {border: 1px solid #ddd;}
+    to {border: 5px solid #2d4ca8;}
+  }
+  
+  /* The element to apply the animation to */
+  .training:hover {
+    background-color: #fff;
+    animation-name: hovers;
+    animation-duration: 2s;
+    border: 5px solid #2d4ca8;
+  }
+
+  @keyframes selected {
+    from {opacity: 100%;}
+    to {opacity: 50%;}
+  }
+  
+  /* The element to apply the animation to */
+
+  .training:not(:hover) {
+    animation-name: selected_swimming;
+    animation-duration: 2s;
+    opacity: 68%;
+  }
+
+  header nav a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+.login-btn a {
+    color: white;
+    text-decoration: none;
+}

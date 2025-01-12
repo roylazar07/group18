@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Gym - Book a Training</title>
+    <link rel="stylesheet" href="booking_style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+    
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Gym Logo">
+            <span>Your Gym</span>
+        </div>
+        <nav>
+            <a href="Welcome.html">Home</a>
+        </nav>
+        <button class="login-btn"> <a href="Registration.html">הרשמה / כניסה לחשבון </a> </button>
+    </header>
+    <main>
+        <section class="booking-section">
+            <form action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="training-type">בחר את סוג האימון</label>
+                        <select id="training-type" name="training-type">
+                            <option value="Yoga">יוגה</option>
+                            <option value="Pilates">פילאטיס</option>
+                            <option value="Strength">אימון כוח</option>
+                            <option value="Swimming">שחייה</option>
+                            <option value="Strength">כוח</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="training-date">בבקשה תבחר תאריך לאימון *</label>
+                        <input type="date" id="training-date" name="training-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="training-time">בחר שעה לאימון</label>
+                        <select id="training-time" name="training-time">
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" id="Book">קבע את האימון</button>
+            </form>
+        </section>
+        <h1 id="ul-title"></h1>
+        <ul id="booked-workouts-list">
+        </ul>
+    </main>
+    <script src="Book.js"></script>
+    <script src="https://kit.fontawesome.com/71704a277d.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    text-align: center;
+    direction: rtl;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+header .logo span {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header nav a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+header .login-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+main {
+    padding: 20px;
+}
+
+.booking-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 180px;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+label {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+
+button:hover {
+    background-color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+section button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+.login-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Newer Stuff */
+
+
+/* Styling for the h1 element */
+#ul-title {
+    font-family: 'Arial', sans-serif; /* Match the font of the page */
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    text-align: center; /* Center align the text */
+    color: #000; /* Black color for the text */
+    margin-bottom: 20px; /* Add spacing below the title */
+}
+
+/* Styling for the ul element */
+#booked-workouts-list {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0 auto; /* Center align the list container */
+    max-width: 1000px; /* Set a max width for the list */
+}
+
+/* Styling for the li elements inside the ul */
+#booked-workouts-list li {
+    font-family: 'Arial', sans-serif; /* Match font to the page */
+    font-size: 18px; /* Adjust font size */
+    color: #333; /* Slightly lighter than black for text */
+    background-color: #f4f4f4; /* Light grey background */
+    padding: 10px 15px; /* Add padding inside the list item */
+    margin-bottom: 10px; /* Add space between list items */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: left; /* Center align the text */
+    direction: ltr;
+}
+
+/* Add hover effect for li elements */
+#booked-workouts-list li:hover {
+    background-color: #e0e0e0; /* Slightly darker grey on hover */
+    cursor: pointer; /* Change cursor to pointer */
+}
+

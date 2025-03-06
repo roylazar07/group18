@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Menu' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('menu.static', filename='css/menu.css') }}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block page_body_main_content %}
+<main>
+    <section class="trainers-section">
+        <h1>המאמנים הטובים ביותר בסביבה!</h1>
+        <div class="trainers-grid">
+            <div class="trainer-card">
+                <img src="static/media/img/trainer1.jpg" alt="Trainer Profile">
+            <div class="trainer-info">
+                <h2>יוסי צנעני</h2>
+                <p>מאמן פילאטיס</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+            </div>
+            <div class="trainer-card">
+                <img src="static/media/img/trainer2.jpg" alt="Trainer Profile">
+                <h2>אורי כהן</h2>
+                <p>מאמן יוגה</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <img src="static/media/img/trainer3.jpg" alt="Trainer Profile">
+                <h2>דנה אוחיון</h2>
+                <p>מאמנת שחייה</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <img src="static/media/img/trainer4.jpg" alt="Trainer Profile">
+                <h2>קיילי לנון</h2>
+                <p>מאמנת כוח</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="trainers-section">
+        <div class="trainers-grid">
+            <div class="trainer-card">
+                <img src="static/media/img/trainer5.jpg" alt="Trainer Profile">
+                <div class="trainer-info">
+                <h2>עזרא בן אבו</h2>
+                <p>מאמן פילאטיס</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+            </div>
+            <div class="trainer-card">
+                <img src="static/media/img/trainer6.jpg" alt="Trainer Profile">
+                <h2>אנה שמואלי</h2>
+                <p>מאמנת יוגה</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <img src="static/media/img/trainer7.jpg" alt="Trainer Profile">
+                <h2>לודמילה גלוסקין</h2>
+                <p>מאמנת שחייה</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <img src="static/media/img/trainer8.jpg" alt="Trainer Profile">
+                <h2>איציק עובדיה</h2>
+                <p>מאמן כוח</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block page_body_footer %}{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('menu.static', filename='js/menu.js') }}"></script>
+{% endblock %}

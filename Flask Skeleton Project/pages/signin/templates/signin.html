@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'My Profile' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('profile.static', filename='css/profile.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+</main>
+<h1>{{ message }}</h1>
+<section class="registration-section">
+    <form action="/signin" method="POST" class="signin-form">
+        <h2>משתמש קיים:</h2>
+        <label for="email">אימייל *</label>
+        <span id="email-error" class="error-message"></span>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone-number">מספר טלפון *</label>
+        <span id="phone-number-error" class="error-message"></span>
+        <input type="tel" id="phone-number" name="phone-number" required>
+
+        <button type="submit" class="btn-primary"> הירשם</button>
+    </form>
+</section>
+</main>
+{% endblock %}
+
+{% block page_body_footer %}{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('profile.static', filename='js/profile.js') }}"></script>
+{% endblock %}

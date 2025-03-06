@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'My Profile' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('profile.static', filename='css/profile.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+</main>
+<h1>{{ message }}</h1>
+<section class="registration-section">
+    <form action="/profile" method="POST" onsubmit=" validateForm(event)">
+        <label for="first-name">שם פרטי *</label>
+        <span id="first-name-error" class="error-message"></span>
+        <input type="text" id="first-name" name="first-name" required>
+
+        <label for="last-name">שם משפחה *</label>
+        <span id="last-name-error" class="error-message"></span>
+        <input type="text" id="last-name" name="last-name" required>
+
+        <label for="nickname">כינוי</label>
+        <span id="nickname-error" class="error-message"></span>
+        <input type="text" id="nickname" name="nickname">
+
+        <label for="email">אימייל *</label>
+        <span id="email-error" class="error-message"></span>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone-number">מספר טלפון *</label>
+        <span id="phone-number-error" class="error-message"></span>
+        <input type="tel" id="phone-number" name="phone-number" required>
+
+        <label for="birth-date">יום הולדת *</label>
+        <span id="date-error" class="error-message"></span>
+        <div class="birth-date">
+            <input type="number" id="day" name="day" placeholder="יום" required>
+            <select id="month" name="month" required>
+                <option value="">חודש</option>
+                <option value="1">ינואר</option>
+                <option value="2">פברואר</option>
+                <option value="3">מרץ</option>
+                <option value="4">אפריל</option>
+                <option value="5">מאי</option>
+                <option value="6">יוני</option>
+                <option value="7">יולי</option>
+                <option value="8">אוגוסט</option>
+                <option value="9">ספטמבר</option>
+                <option value="10">אוקטובר</option>
+                <option value="11">נובמבר</option>
+                <option value="12">דצמבר</option>
+            </select>
+            <input type="number" id="year" name="year" placeholder="שנה" required>
+        </div>
+
+        <button type="submit" class="btn-primary">צור חשבון</button>
+    </form>
+</section>
+</main>
+{% endblock %}
+
+{% block page_body_footer %}{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('profile.static', filename='js/profile.js') }}"></script>
+{% endblock %}

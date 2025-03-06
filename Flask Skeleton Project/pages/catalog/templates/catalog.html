@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Catalog' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('catalog.static', filename='css/catalog.css') }}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block page_body_main_content %}
+<main>
+    <h1>{{message}}</h1>
+    <section class="booking-section">
+        <form action="/catalog" method="POST" class="book-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="training-type">בחר את סוג האימון</label>
+                    <select type="training-type" id="training-type" name="training-type">
+                        <option value="Yoga">יוגה</option>
+                        <option value="Pilates">פילאטיס</option>
+                        <option value="Strength">אימון כוח</option>
+                        <option value="Swimming">שחייה</option>
+                        <option value="Strength">כוח</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="training-date">בבקשה תבחר תאריך לאימון *</label>
+                    <input type="date" id="training-date" name="training-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="training-time">בחר שעה לאימון</label>
+                    <select type="training-time" id="training-time" name="training-time">
+                        <option value="08:00">08:00</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" id="Book">קבע את האימון</button>
+        </form>
+    </section>
+    {% if session['Logged_in']%} 
+    <h1 id="ul-title">Your Workouts</h1>
+    {% if workouts %}
+    <ul id="booked-workouts-list">
+        {% for workout in workouts %}
+        <li>
+            <div id="container">
+                <form action="/catalog_cancel" method="POST" class="cancel-holder">
+                        <span class="dates"><strong><i class="fa-solid fa-trophy"></i>Type:</strong> {{ workout.get('training_type') }} </span>
+                        <span><strong><i class="fa-regular fa-calendar-days"></i> Date:</strong> {{ workout.get('training_date') }} </span>
+                        <span><strong><i class="fa-solid fa-clock"></i> Time:</strong> {{ workout.get('training_time') }}</span>
+                        <span><strong><i class="fa-solid fa-person"></i> Spots Left:</strong> <span>{{ workout.get('people') }}/30</span>
+
+                    {% set type = workout.get('training_type') %}
+                    {% set date = workout.get('training_date') %}
+                    {% set time = workout.get('training_time') %}
+        
+                    <!-- Hidden inputs for workout details -->
+                    <input type="hidden" name="training-type" value="{{ type }}">
+                    <input type="hidden" name="training-date" value="{{ date }}">
+                    <input type="hidden" name="training-time" value="{{ time }}">
+
+
+                    <!-- Cancel button to submit the form -->
+                     <span class="span-btn">
+                        <button type="submit" class="cancel">Cancel</button>   
+                    </span> 
+                </form>
+            </div>    
+
+            <button id="show-update" class="show-update" data-target="#update-form-div-{{ loop.index }}">Press Here to Update Time</button>
+            <div id="update-form-div-{{loop.index}}" class="Hide" class="update-form-div-class">
+            <form action="/catalog_update" method="POST" class="update-holder">
+                <input type="hidden" name="training-type" value="{{ type }}">
+                <input type="hidden" name="training-date" value="{{ date }}">
+                <input type="hidden" name="training-time" value="{{ time }}">
+                <div class="form-group update-select">
+                    <label for="training-date-new">בבקשה תבחר תאריך חדש לאימון *</label>
+                    <input type="date" id="training-date-new" name="training-date-new" required>
+                </div>
+                <div class="form-group update-select">
+                    <label for="training-time-new">בחר שעה חדשה לאימון</label>
+                    <select type="training-time-new" id="training-time-new" name="training-time-new">
+                        <option value="08:00">08:00</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                    </select>
+                </div>
+                <button type="submit" class="update">Update Time</button>  
+            </form>
+        </div>
+        </li>
+        {% endfor %}
+    {% else %}
+        <p>No workouts scheduled.</p>
+    </ul>
+    {% endif%}
+    {% endif%}
+</main>
+{% endblock %}
+
+{% block page_body_footer %}{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('catalog.static', filename='js/catalog.js') }}"></script>
+{% endblock %}

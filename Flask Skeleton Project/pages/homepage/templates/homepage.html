@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Homepage' %}
+
+{% block page_body_main_content %}
+<main>
+    <section class="welcome-section">
+        <div class="welcome-text">
+            <h1>ברוכים הבאים!</h1>
+            <p>הרשמו לאתר ובואו נפגש</p>
+            <div class="buttons">
+                <button><a href="/catalog">קבע אימון</a></button>
+                <button><a href="/about">סוגי אימונים</a></button>
+                <button><a href="/contact">צור קשר</a></button>
+                <button><a href="/menu">המאמנים שלנו</a></button>
+            </div>
+        </div>
+        <div class="welcome-image">
+            <img src="static/media/img/welcome.jpg" alt="Welcome Image">
+        </div>
+    </section>
+</main>
+{% endblock %}

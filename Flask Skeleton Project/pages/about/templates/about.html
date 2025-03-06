@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'About' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('about.static', filename='css/about.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+<main>
+    <h1>כל סוגי האימונים שמוצעים אצלנו</h1>
+    <div class="trainings">
+        <div class="training" id="Pilates">
+            <img src="static/media/img/pilates.jpg" alt="Pilates Class">
+            <p>אימון פילאטיס בקבוצות</p>
+        </div>
+        <div class="training" id="Strength">
+            <img src="static/media/img/strength.jpg" alt="Strength Training">
+            <p>אימון כוח לכל רמה</p>
+        </div>
+        <div class="training" id="Cardio">
+            <img src="static/media/img/cardio.jpg" alt="Cardio Training">
+            <p>אימון קרדיו מותאם אישית</p>
+        </div>
+        <div class="training" id="Yoga">
+            <img src="static/media/img/yoga.jpg" alt="Yoga Class">
+            <p>שיעורי יוגה לכל הגילאים</p>
+        </div>
+        <div class="training" id="Swimming">
+            <img src="static/media/img/swimming.jpg" alt="Swimming Classes">
+            <p>שיעורי שחיה</p>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block page_body_footer %}{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('about.static', filename='js/about.js') }}"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
